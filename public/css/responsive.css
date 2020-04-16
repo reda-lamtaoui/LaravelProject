@@ -1,0 +1,205 @@
+body {
+  margin-bottom: 3em;
+  padding: 3em 1em;
+  background: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+.header-main{
+	padding-top:100px;
+	margin-bottom: 0px;
+	max-width: 640px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.header-main h1{
+	margin: 0;
+}
+.header-content{
+	max-width: 640px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.header-content h1{
+	margin: 0;
+}
+@media screen and (min-width: 600px){
+  .header-content{
+	font-size: 19px;
+}
+.header-content h1{
+	font-size: 42px;
+}
+}
+@media screen and (min-width: 768px){
+.header-content h1{
+	font-size: 64px;
+}
+}
+
+@media screen and (min-width: 600px){
+	.header-main{
+	  font-size: 19px;
+  }
+  .header-main h1{
+	  font-size: 22px;
+  }
+  }
+  @media screen and (min-width: 768px){
+  .header-main h1{
+	  font-size: 44px;
+  }
+  }
+
+
+main{
+	letter-spacing: .-33em;
+}
+main.h2{
+
+}
+article {
+	width:400px;
+  box-shadow: 0 0 10px rgba(#000,.15);
+  margin-bottom: 3em;
+      padding: 1em;
+      background: #fff;
+}
+@media screen and (min-width: 600px){
+article {
+	width:40%;
+	display: inline-block;
+	margin-left: 4%;
+	margin-top:4%;
+}
+article img{
+	width:100%;
+}
+main {
+	letter-spacing: normal;
+}
+}
+
+
+@media screen and (min-width: 768px){
+article {
+	width:26%;
+	display: inline-block;
+	margin-left: 4%;
+	margin-top:4%;
+}
+article img{
+	width:100%;
+}
+main {
+	letter-spacing: normal;
+}
+}
+
+@media screen and (min-width: 1024px){
+article {
+	padding-top:2em; 
+	width:40%;
+	display: inline-block;
+	margin-left: 4%;
+	margin-top:4%;
+}
+body{
+	padding-left: 30%;
+}
+article img{
+	width:100%;
+}
+main {
+	letter-spacing: normal;
+
+}
+}
+
+@media screen and (min-width: 1366px){
+body{
+	padding-left:280px;
+}
+article {
+	width:26%;
+	display: inline-block;
+	margin-left: 4%;
+	margin-top:4%;
+}
+article img{
+	width:100%;
+}
+main {
+	letter-spacing: normal;
+}
+}
+
+
+@media screen and (min-width: 1024px){
+aside{
+	background: black;
+	color:#aaa;
+	padding: 1em;
+	width:30%;
+	position: fixed;
+	left: 0;
+	bottom:0;
+	top:0;
+}
+aside h1{
+	font-size: 60px;
+	color:white;
+}
+figure{
+	margin-right: auto;
+	margin-left: auto;
+}
+}
+@media screen and (min-width: 1366px){
+aside{
+	width:280px;
+}
+}
+<style>
+.error{
+  background-color: red;
+  height: 1.4em;
+  color:black;
+}
+.valide{
+  background-color: green;
+  height: 1.4em;
+  color:black;
+}
+.card {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+width: 500px;
+margin: auto;
+text-align: center;
+font-family: arial;
+margin:20px;
+}
+
+.title {
+color: grey;
+font-size: 18px;
+}
+
+button {
+border: none;
+outline: 0;
+display: inline-block;
+padding: 8px;
+color: white;
+background-color: #000;
+text-align: center;
+cursor: pointer;
+width: 100%;
+font-size: 18px;
+}
+button:hover, a:hover {
+opacity: 0.7;
+}
+

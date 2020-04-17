@@ -8,10 +8,6 @@
       <p>faster than light<br>Millions of products are sold every day with ShopIT</p>
     </div>
   </header>
-
-
-
-
   <!--
     Par défaut
       ombre portée: 0 0 10px rgba(#000,.15);
@@ -32,8 +28,6 @@
     À partir de 1366px
       3 articles par ligne avec une goutière de 4%
   -->
-
-  
  <main>
  <header>
     <div class="header-main">

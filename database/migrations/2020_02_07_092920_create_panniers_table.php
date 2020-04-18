@@ -14,9 +14,11 @@ class CreatePanniersTable extends Migration
     public function up()
     {
         Schema::create('panniers', function (Blueprint $table) {
+            $table->bigIncrements('pannier_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('produit_id');
-            $table->bigInt('quantite');
+            $table->bigInteger('quantite');
+            $table->float('somme', 8, 2)->default(0);
             $table->timestamps();
         });
     }

@@ -1,17 +1,12 @@
 @extends('layouts.home')
 
 @section('content')
- 
-  <header>
-    <div class="header-content">
-      <h1>ShopIT</h1>
-      <p>faster than light<br>Millions of products are sold every day with ShopIT</p>
-    </div>
-  </header>
- <main>
+<main>
  <header>
     <div class="header-main">
-      <h1>TOP Products</h1>
+    @foreach($title as $t)
+      <h1>{{ $t->titre }}</h1>
+      @endforeach
     </div>
   </header> 
   @foreach($produits as $produit)

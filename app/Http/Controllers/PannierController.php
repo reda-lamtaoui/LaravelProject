@@ -10,7 +10,7 @@ use App\pannier;
 use Auth;
 use Session;
 
-class AchatController extends Controller
+class PannierController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -27,14 +27,23 @@ class AchatController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function delete($id)
     {
-        $categorie=categorie::all();
-        $produit=produit::paginate(6);
-        return view('index',[
-            "categories"=>$categorie,
-            "produits"=>$produit
-            ]);
+        $delete=Pannier::where('id',$id)->get();
+    foreach($delete as $d){
+        $d->delete();
+    }
+    return redirect(route('pannier'));
+    }
+    public function update(Request $request)
+    {
+        $edit=Pannier::where('id',$request->post('id'))->get();
+        foreach($edit as $t){
+                 $t->quantite=$request->post('quantite');
+                 $t->somme=$request->post('quantite') * $request->post('prix');
+                 $t->save();
+             }
+        return redirect(route('pannier'));
     }
     public function produit($id)
     {

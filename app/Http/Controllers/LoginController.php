@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Illuminate\Validation\ValidationException;
+
 
 class LoginController extends Controller
 {
@@ -30,5 +33,8 @@ class LoginController extends Controller
             }
             
         }
+        throw ValidationException::withMessages([
+            $request->email => [trans('auth.failed')],
+        ]);
     }
 }

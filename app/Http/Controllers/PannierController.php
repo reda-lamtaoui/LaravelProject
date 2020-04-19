@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\produit;
 use App\categorie;
 use App\pannier;
+use App\user;
 use Auth;
 use Session;
 
@@ -29,15 +30,22 @@ class PannierController extends Controller
      */
     public function delete($id)
     {
-        $delete=Pannier::where('id',$id)->get();
-    foreach($delete as $d){
-        $d->delete();
-    }
+        $delete=Pannier::where('pannier_id',$id)->delete();
     return redirect(route('pannier'));
+    }
+    public function deleteUser($id)
+    {
+    $delete=user::where('id',$id)->delete();
+    return redirect(route('GestionUsers'));
+    }
+    public function deleteProduit($id)
+    {
+        $delete=Produit::where('id',$id)->delete();
+    return redirect(route('GestionProducts'));
     }
     public function update(Request $request)
     {
-        $edit=Pannier::where('id',$request->post('id'))->get();
+        $edit=Pannier::where('pannier_id',$request->post('id'))->get();
         foreach($edit as $t){
                  $t->quantite=$request->post('quantite');
                  $t->somme=$request->post('quantite') * $request->post('prix');

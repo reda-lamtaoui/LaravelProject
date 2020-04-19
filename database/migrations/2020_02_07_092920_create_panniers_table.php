@@ -11,6 +11,7 @@ class CreatePanniersTable extends Migration
      *
      * @return void
      */
+    protected $primaryKey = 'pannier_id';
     public function up()
     {
         Schema::create('panniers', function (Blueprint $table) {
@@ -20,6 +21,7 @@ class CreatePanniersTable extends Migration
             $table->bigInteger('quantite');
             $table->float('somme', 8, 2)->default(0);
             $table->timestamps();
+            $table->dropPrimary('pannier_id');
         });
     }
 

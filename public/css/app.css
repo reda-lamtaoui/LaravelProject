@@ -3566,7 +3566,6 @@ input[type=button].btn-block {
 .dropleft .dropdown-toggle::after {
   display: none;
 }
-
 .dropleft .dropdown-toggle::before {
   display: inline-block;
   margin-right: 0.255em;

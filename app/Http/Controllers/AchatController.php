@@ -70,4 +70,36 @@ class AchatController extends Controller
             "categories"=>$categorie
             ]);
     }
+    public function addProduct(Request $req){
+        try{
+            $today=date("Y-m-d");
+            $this->validate($req,[
+                'fileToUpload' => 'required|image|mimes:jpeg,jpg,png,gif|max:5000'
+            ]);
+            $image=$req->file('fileToUpload');
+            $new_name=$today.''.rand().'.'.$image->getClientOriginalExtension();
+            $image->move(public_path("uploads"),$new_name);
+    
+            $Prod=new produit;
+            $Prod->titre=$req->libelle;
+            $Prod->prix=$req->prix;
+            $Prod->description=$req->description;
+            $Prod->categorie_id=$req->type;
+            $Prod->image=$new_name;
+            $Prod->save();
+            return view('GestionProducts');
+        }catch(Exception $e){
+            session::put("erreur",$e->getmessage());
+                return view('erreur');
+        }
+    }
+    public function updateProduct(Request $req){
+            $edit=produit::where('id',$req->post('id'))->get();
+        foreach($edit as $Prod){
+            $Prod->prix=$req->prix;
+            $Prod->description=$req->description;
+            $Prod->save();
+             }
+             return view('GestionProducts');
+    }
 }

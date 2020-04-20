@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.homeAdmin')
 
 @section('content')
 @include('layouts.asideAdmin')

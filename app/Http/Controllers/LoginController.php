@@ -33,8 +33,10 @@ class LoginController extends Controller
             }
             
         }
-        throw ValidationException::withMessages([
-            $request->email => [trans('auth.failed')],
-        ]);
+        $error = \Illuminate\Validation\ValidationException::withMessages([
+            'email' => ['email incorrect'],
+            'password' => ['password incorrect'],
+         ]);
+         throw $error;
     }
 }

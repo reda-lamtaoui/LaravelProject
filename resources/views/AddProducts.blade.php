@@ -10,6 +10,9 @@
           <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Add product</h3>
+              <strong style="color:#FF0000";>Remplit tout les champs</strong>
+                                        
+                                
             </div>
             <form Action="{{ route('addprod') }}" method="Post" name="evale" 
               onsubmit="return tester(evale);" enctype="multipart/form-data">
@@ -46,8 +49,15 @@
                 </div>
                 <div style="color:red;" id="message">
             </div>
-              
+            @error('champs')
+            <strong>Remplit tout les champs</strong>
+                                @enderror
               <div class="box-footer">
+              @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                 <button type="submit" class="btn btn-info pull-right">Add</button>
               </div>
             </form>

@@ -15,9 +15,10 @@
     </div>
   </header> 
   @foreach($produits as $produit)
-    <article>
-    <form action="{{ route('achat') }}" method="Post">
+  <form action="{{ route('achat') }}" method="Post">
     @csrf
+    <article>
+  
     <input type="hidden" name="produit" id="produit" value="{{ $produit->id }}">
     <input type="hidden" name="prix" id="prix" value="{{ $produit->prix }}">
     <img src="uploads/{{ $produit->image}}" alt="">
@@ -26,10 +27,10 @@
       <p>{{ $produit->description}}</p>
       <p>Quantité: <input type="number"  name="quantite" id="quantite" size="2" value="1" autocomplete="off" style="text-align: center ; max-width: 50px" ></p>
       <button type="submit">Add to cart</button>
-      <form>
+      
     </article>
-
-    @endforeach
+    <form>
+      @endforeach
     
   </main>
   @include('layouts.aside')

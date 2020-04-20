@@ -20,6 +20,15 @@ class AchatController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->rules = [
+            'last_name' => 'required',
+            'first_name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required',
+            'identification' => 'required',
+            'role_id' => 'required',
+            'site_id' => 'required',
+        ];
     }
 
     /**
@@ -71,8 +80,8 @@ class AchatController extends Controller
             ]);
     }
     public function addProduct(Request $req){
-        try{
-            $today=date("Y-m-d");
+        
+         $today=date("Y-m-d");
             $this->validate($req,[
                 'fileToUpload' => 'required|image|mimes:jpeg,jpg,png,gif|max:5000'
             ]);
@@ -88,10 +97,10 @@ class AchatController extends Controller
             $Prod->image=$new_name;
             $Prod->save();
             return view('GestionProducts');
-        }catch(Exception $e){
-            session::put("erreur",$e->getmessage());
-                return view('erreur');
-        }
+        $error = \Illuminate\Validation\ValidationException::withMessages([
+            'champs' => ['remplit tout les champs'],
+         ]);
+         throw $error;
     }
     public function updateProduct(Request $req){
             $edit=produit::where('id',$req->post('id'))->get();

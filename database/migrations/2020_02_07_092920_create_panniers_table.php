@@ -21,7 +21,6 @@ class CreatePanniersTable extends Migration
             $table->bigInteger('quantite');
             $table->float('somme', 8, 2)->default(0);
             $table->timestamps();
-            $table->dropPrimary('pannier_id');
         });
     }
 

@@ -18,6 +18,32 @@ class SearchController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    // public function searchProduit(Request $req)
+    // {
+    //     $output="";
+    //     $prods=DB::table('Produits')->where('titre','like','%'.$req->search.'%')->orWhere('description','like','%'.$req->search.'%')->get();
+    //     if($prods){
+    //         foreach($prods as $prod){
+    //                     $output.='<tr>
+    //                             <td>'.$prod->titre.'</td>'.
+    //                             '<td><input type="text" name="description" value="'.$prod->description.'"></td>'.
+    //                             '<td><input type="text" name="prix" value="'.$prod->prix.'"></td>'.
+    //                             '<td style="width:200px;">
+    //                             <input type="hidden" name="id"  value="'.$prod->id.'">
+    //                             <button style="background-color:green;width:90px;" type="submit" class="btn btn-info pull-right">Update</button>
+
+    //                             <div style="cursor: pointer;" data-toggle="modal"  data-target="#exampleModal" class="show"
+    //                      data-prix="'.$prod->prix.'" data-id="'.$prod->id.'"  data-designation="'.$prod->titre.'"
+    //                      data-desc="'.$prod->description.'" data-img="'.$prod->image.'">
+                         
+    //                      <a href="/deleteProduit/'.$prod->id.'" style="background-color:red;width:90px;" class="btn btn-info pull-right" style="background-color: red">Delete</a>'.
+    //                                 '</div></td><tr>';
+    //                 }
+    //     return Response($output);
+    //     }
+        
+       
+    // }
     public function searchProduit(Request $req)
     {
         $output="";
@@ -29,15 +55,17 @@ class SearchController extends Controller
                                 '<td><input type="text" name="description" value="'.$prod->description.'"></td>'.
                                 '<td><input type="text" name="prix" value="'.$prod->prix.'"></td>'.
                                 '<td style="width:200px;">
-                                <input type="hidden" name="id"  value="'.$prod->id.'">
-                                <button style="background-color:green;width:90px;" type="submit" class="btn btn-info pull-right">Update</button>
 
-                                <div style="cursor: pointer;" data-toggle="modal"  data-target="#exampleModal" class="show"
-                         data-prix="'.$prod->prix.'" data-id="'.$prod->id.'"  data-designation="'.$prod->titre.'"
+                               
+
+                                <div style="cursor: pointer;" data-toggle="modal"  data-target="#exampleModal" class="open"
+                         data-prix="'.$prod->prix.'" data-id="'.$prod->id.'" data-qte="10" data-designation="'.$prod->titre.'"
                          data-desc="'.$prod->description.'" data-img="'.$prod->image.'">
                          
-                         <a href="/deleteProduit/'.$prod->id.'" style="background-color:red;width:90px;" class="btn btn-info pull-right" style="background-color: red">Delete</a>'.
-                                    '</div></td><tr>';
+                                <a style="background-color:green;width:90px;" type="submit" class="btn btn-info pull-right"><input type="hidden"  value="'.$prod->id.'">Update</a>'.
+                                    '</div>
+                                    <a href="/deleteProduit/'.$prod->id.'" style="background-color:red;width:90px;" class="btn btn-info pull-right" style="background-color: red">Delete</a></td><tr>
+                                    ';
                     }
         return Response($output);
         }

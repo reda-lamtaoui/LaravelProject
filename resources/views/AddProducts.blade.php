@@ -27,7 +27,7 @@
               </div>
                 </div>
                 <div class="form-group">
-                   <label>designation</label>
+                   <label>title</label>
                   <input type="text" name="libelle" class="form-control" placeholder="Enter ...">
                   
                 </div>

@@ -5,15 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="width:1100px;max-width:1300px;right:200px">
-                <div class="card-header">paniers</div>
+                <div class="card-header">pannier</div>
     
                 <table>
           <thead>
             <tr>
-              <th>Designation</th>
+              <th>title</th>
               <th>Description</th>
-              <th>Quantité</th>
-              <th>Prix</th>
+              <th>Quantity</th>
+              <th>Price</th>
               <th></th>
               <th></th>
             </tr>
@@ -33,11 +33,11 @@
               <td>
                 <input type="hidden" name="id" value="{{ $pannier->pannier_id }}">
                 <input type="hidden" name="prix" value="{{ $pannier->prix }}">
-                <input type="submit" value="Modifier" class="button" style="background-color: #4CAF50">
+                <input type="submit" value="Update" class="button" style="background-color: #4CAF50">
               </form>
              </td>
               <td>
-              <a href='/delete/{{ $pannier->pannier_id }}' class="button" style="background-color: red">Supprimer</a>
+              <a href='/delete/{{ $pannier->pannier_id }}' class="button" style="background-color: red">Delete</a>
               </td>
               </tr>
 

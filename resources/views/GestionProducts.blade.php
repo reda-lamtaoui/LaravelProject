@@ -16,9 +16,9 @@
 <table class="table table-bordered table-hover">
 <thead>
  <tr>
-   <th>Designation</th>
+   <th>Title</th>
    <th>Description</th>
-   <th>Prix</th>
+   <th>Price</th>
    <th></th>
  </tr>
 </thead>

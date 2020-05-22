@@ -21,7 +21,7 @@
       
       <h2>{{ $produit->titre}}</h2>
       <p>{{ $produit->description}}</p>
-      <p>Quantité: <input type="number"  name="quantite" id="quantite" size="2" value="1" autocomplete="off" style="text-align: center ; max-width: 50px" ></p>
+      <p>Quantity: <input type="number"  name="quantite" id="quantite" size="2" value="1" autocomplete="off" style="text-align: center ; max-width: 50px" ></p>
       <button type="submit">Add to cart</button>
       </form>
     </article>

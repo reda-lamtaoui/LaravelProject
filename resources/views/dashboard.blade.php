@@ -11,7 +11,7 @@
  <main>
  <header>
     <div class="header-main">
-      <h1>Administrateur Page</h1>
+      <h1>Administrator Page</h1>
     </div>
   </header> 
     

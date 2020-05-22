@@ -9,6 +9,7 @@
       @endforeach
     </div>
   </header> 
+  <hr class="new5">
   
   <main>
     @foreach($produits as $produit)

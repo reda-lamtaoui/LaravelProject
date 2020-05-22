@@ -14,6 +14,7 @@
       <h1>TOP Products</h1>
     </div>
   </header> 
+  <hr class="new5">
   @foreach($produits as $produit)
 
     <article>

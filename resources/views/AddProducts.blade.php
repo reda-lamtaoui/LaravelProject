@@ -10,7 +10,7 @@
           <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Add product</h3>
-              <strong style="color:#FF0000";>Remplit tout les champs</strong>
+              <strong style="color:#FF0000";>Remplisser tout les champs</strong>
                                         
                                 
             </div>

@@ -14,8 +14,8 @@ class AlterPanniersTable extends Migration
     public function up()
     {
         Schema::table('panniers', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('produit_id')->references('id')->on('produits');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('produit_id')->references('id')->on('produits')->onDelete('cascade');
         });
     }
 

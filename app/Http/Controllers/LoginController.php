@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Session;
 use Illuminate\Validation\ValidationException;
 
 
@@ -27,6 +28,7 @@ class LoginController extends Controller
             $user=User::where('email',$request->email)->first();
 
             if($user->is_admin()){
+                Session::put('admin', '1');
                 return redirect()->route('dashboard');
             }else{
                 return redirect()->intended('home');
